@@ -1,0 +1,20 @@
+// channel 0= red 
+// channel 1= green 
+int main()
+{
+	camera_open();
+	camera_update();
+	enable_servos();
+if (get_object_count(0)>= 1)
+{ 
+	printf("There's a red blob\n");
+	set_servo_position(0,1500);
+	set_servo_position(0,0);
+}
+else
+{
+	//FAILSAFE 
+	//maybe other points 
+	printf("Don't see a red  blob\n"); 
+}
+}
