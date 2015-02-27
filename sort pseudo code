@@ -1,0 +1,56 @@
+// Created on Thu February 26 2015
+
+int main()
+{
+	//we have a function for move forward and turn 90
+Move Forward (about distance to pompom, speed (/*don't care*/)	).
+Orientate to face pompoms (turn left or right 90)
+//Turn on treads 
+	move_to_position(motor,velocity,position/* enough to get pompom in front of camera*/)
+	//open camera 
+	camera_open
+	//so that the pompoms acully get into the mechanism 
+	while 
+{
+	// camera constantly uipdates
+	Camera_update
+	//check for any pom poms 
+	//0 means there are 0 objects in channel 0 
+Get_object_count(0)>=0 
+	//until popoms get into the mechanism 
+move forward(/* small amount*/)
+	
+if
+{
+	//search for red 
+	Get object count(0)>=1 
+	//to turn treads off so the mechanism won't jam or get overloaded with pompoms 
+	m.Sleep (/*amount of time it takes to sort pompoms*/)
+	//pendulum sorts to a side 
+	Set _Servo _position (/*left or right*/ )
+	//reset servo 
+	Set _Servo _position(/* original position*/)
+}
+else
+{	
+if 
+{	//check for green 
+	Get_object_count(1)>=0 
+	// turn treads off
+	msleep();
+	//pendulum sorts to a side 
+	Set_servo_position(/*Left or right*/);
+	// reset servo position 
+	Set_servo_position(/*original position*/);
+else 
+{
+	// chrisitnes fail safe
+	
+}
+
+
+	}	
+	}
+
+
+}
