@@ -1,20 +1,109 @@
-// channel 0= red 
-// channel 1= green 
+// Created on Sun March 8 2015
+//wheel 0=left rightWheel 3 = right
+	#define LEFTWHEEL 1
+    #define RIGHTWHEEL 3
+	//camera 
+	 #define GREEBN 0
+	 #define RED 1
+	 #define BOTGUY  2
+	//turning 
+	 #define  RIGHT  1
+	 #define LEFT  -1
+void turn90(int direction);
+void moveForward(int direction);
 int main()
 {
+	turn90(RIGHT);
+	moveForward(2000);
+}
+/*void Sort()
+{
+	while
+	{
 	camera_open();
 	camera_update();
-	enable_servos();
-if (get_object_count(0)>= 1)
-{ 
-	printf("There's a red blob\n");
-	set_servo_position(0,1500);
-	set_servo_position(0,0);
+	get_object_count(channel) >= 0;	
+	get_object_count(1)>=0;
+	motor(treads);
+	//inchforward(500);
+	}
+	if (get_object_count(channel) >= 1)
+	{
+	//stp treads?
+	set_servo_position();
+	}
+	else
+	{
+		if(get_object_count(1)>=1)
+		{
+		//stp treads
+			set_servo_position();// port,pos
+		//reset servo 
+		}
+		else
+		{
+		//??????????
+		}
+	}
+}*/
+//Code that turns 90 degrees with 1 wheel
+void turn90(int direction)
+{
+clear_motor_position_counter(LEFTWHEEL);
+clear_motor_position_counter(RIGHTWHEEL);
+mtp(LEFTWHEEL,direction*500,2523.746); //port, speed, distance
+mtp(RIGHTWHEEL,direction*500,0);
+bmd(LEFTWHEEL); //makes motor stop running after finished
+bmd(RIGHTWHEEL);
+}
+//Code that turns 90 degrees with 2 wheels
+/*void turn902(int direction)
+{
+clear_motor_position_counter(leftWheel);
+clear_motor_position_counter(rightWHeel);
+mtp(leftWHeel,500,759); //port, speed, distance
+mtp(rightWheel,500,759);
+bmd(leftWheel); //makes motor stop running after finished
+bmd(rightWheel);
+}
+*/
+void moveForward(int distance)
+{
+clear_motor_position_counter(LEFTWHEEL);
+clear_motor_position_counter(RIGHTWHEEL);
+mtp(LEFTWHEEL,500,1000/15*distance); //port, speed, distance 1000 = 15 cm
+mtp(RIGHTWHEEL,500,1000/15*distance);
+bmd(LEFTWHEEL); //makes motor stop running after finished
+bmd(RIGHTWHEEL);
+}
+/*
+void inchForward(int distance)
+{
+clear_motor_position_counter(0);
+clear_motor_position_counter(1);
+mtp(leftWheel,100,1000/15*distance); //port, speed, distance 1000 = 15 cm
+mtp(rightWheel,100,1000/15*distance);
+bmd(leftWheel); //makes motor stop running after finished
+bmd(rightWheel);
+}
+void moveToBotguy
+{
+	
+}
+findBotguy
+{
+if get_object_count(2)>=1
+{
+moveToMA
 }
 else
 {
-	//FAILSAFE 
-	//maybe other points 
-	printf("Don't see a red  blob\n"); 
+//turn?
 }
+void moveToMa
+{
+	
 }
+*/
+
+
